@@ -1,3 +1,19 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @HiddenStorys
+ Unwatch 3
+  Star 1
+  Fork 1 cruxicheiros/jsbot
+ Code  Issues 0  Pull requests 0  Wiki  Pulse  Graphs
+Branch: hiddenstorys Find file Copy pathjsbot/JSBot.js
+0471c56  3 minutes ago
+@HiddenStorys HiddenStorys Update JSBot.js
+2 contributors @HiddenStorys @cruxicheiros
+RawBlameHistory     101 lines (83 sloc)  2.18 KB
 var Commands = {
 	"toggleLock": function() {
 		toggleChatLock();
@@ -98,3 +114,5 @@ function test() {
         }
     }, 60000);*/
 }
+Status API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Contact Help
