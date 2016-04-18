@@ -11,6 +11,9 @@ var Commands = {
 	"seen": function(user) {
 		searchMessages("{V:" + user[0] + "}");
 	}
+	"commandList": function {
+		postMessage("The commands are: \n^hello\n^sext\n^seen\nand ^commandList")
+	}
 };
 
 function postMessage(message) {
