@@ -29,8 +29,11 @@ var ScheduledDisactive = false;
     --------------------------
 */
 var Commands = {
+	"hello": function() {
+		postMessage("Hello World!");
+	},
 	"information": function() {
-		postMessage("Hello! This is JSBot, a prototype Chatzy bot program.\nMy Developers are CraftSpider, Dino, and HiddenStorys.");
+		postMessage("This is JSBot, a prototype Chatzy bot program.\nMy original Developers are CraftSpider, Dino, and HiddenStorys.");
 	},
 	"uptime": function() {
 	    var uptime = Math.floor((new Date() - BOOT_TIME)/1000);
@@ -72,22 +75,25 @@ var Commands = {
 	    } else {
 	        switch (args[0]) {
 	            case "help":
-	                postMessage("Use: ^help [Command Name]\nDescription: Help command, by default gives general information about Talos and a list of available commands. Adding the name of another command as an argument will give a more detailed description of that command. Though you probably figured that out, you're here after all :P");
+	                postMessage("Use: ^help [Command Name]\nDescription: Help command, by default gives general information about JSBot and a list of available commands. Adding the name of another command as an argument will give a more detailed description of that command.");
 	                break;
+	            case "hello":
+	            	postMessage("Use: ^hello\nDescription: Extremely simple default command, to prove that JSBot is awake and alert.");
+	            	break;
 	            case "information":
-	            	postMessage("Use: ^information\nDescription: Gives a short blurb about Talos.");
+	            	postMessage("Use: ^information\nDescription: Gives a short blurb about JSBot.");
 	            	break;
 	            case "kill":
-	                postMessage("Use: ^kill\nDescription: Causes Talos to immediately leave the chat, and cease running. Admin only.");
+	                postMessage("Use: ^kill\nDescription: Causes JSBot to immediately leave the chat, and cease running. Admin only.");
 	                break;
 	            case "toggleSleep":
-	                postMessage("Use: ^toggleSleep [time]\nDescription: Turns user commands and related features off or on. An admin only command, to prevent abuse. Also doesn't declare the finish to any active WWs that finish while I'm asleep.");
+	                postMessage("Use: ^toggleSleep [time]\nDescription: Turns user commands and related features off or on. An admin only command, to prevent abuse.");
 	                break;
 	            case "uptime":
-	            	postMessage("Use: ^uptime\nDescription: Gives how long, down to the second, that Talos has been running.");
+	            	postMessage("Use: ^uptime\nDescription: Gives how long, down to the second, that JSBot has been running.");
 	            	break;
 	            case "version":
-	            	postMessage("Use: ^version\nDescription: The version that Talos is currently running. I always know exactly where I am.");
+	            	postMessage("Use: ^version\nDescription: The version that JSBot is currently running.");
 	            	break;
 	            default:
 	                postMessage("Sorry, no available help page for that.");
@@ -100,10 +106,10 @@ var ADMIN_COMMANDS = {
     "toggleSleep": function(time) {
     	if (IsSleeping == 0) {
     		IsSleeping = 1;
-    		postMessage("Good night! Going to sleep " + (time[0]?"for " + time[0] + " minutes":"now") + ". To wake me, type [b]^toggleSleep[/b] again.");
+    		postMessage("Going to sleep" + (time[0]?" for " + time[0] + " minutes":"now") + ". To wake me, type [b]^toggleSleep[/b] again.");
     	} else {
     		IsSleeping = 0;
-    		postMessage("I'm awake again" + (time[0]? " for " + time[0] + " minutes":"") + ", and available for user commands. To have me sleep again, type [b]^toggleSleep[/b].");
+    		postMessage("I'm awake again" + (time[0]? " for " + time[0] + " minutes":"") + ". To send me back to sleep, type [b]^toggleSleep[/b].");
     	}
     	if(time[0]) {
     	    setTimeout(function(){
@@ -112,9 +118,9 @@ var ADMIN_COMMANDS = {
     	}
 	},
 	"kill": function() {
-		postMessage("Et Tu, Brute?");
+		postMessage("Shutting Down");
 		setInterval(function() {leaveChat();}, 200);
-		throw new Error("Talos Killed by Admin");
+		throw new Error("JSBot Killed by Admin");
 	},
 };
 
@@ -205,7 +211,7 @@ function editRoomBoard(message, method, key) {  //Method is the style of editing
 
 //requires re-init of JSBot. Automate that?
 function changeName(name) {
-	X8752('X6610');
+	X8752('X6610');T
 
 	setTimeout(function() {
 		X4964.value = name;
@@ -266,7 +272,7 @@ function readChat() {
 			} else if (IsSleeping == 1) {
 				break;
 			} else if (window["ADMIN_COMMANDS"][Command] && !isAdmin) {
-			    postMessage("Sorry, that command is Admin only, and I don't recognize you!");
+			    postMessage("Sorry, that command is Admin only.");
 			} else if (window["Commands"][Command]) {
 				window["Commands"][Command](Args);
 			} else {
