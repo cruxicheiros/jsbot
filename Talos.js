@@ -75,22 +75,22 @@ var Commands = {
 	    } else {
 	        switch (args[0]) {
 	            case "help":
-	                postMessage("Use: ^help [Command Name]\nDescription: Help command, by default gives general information about JSBot and a list of available commands. Adding the name of another command as an argument will give a more detailed description of that command.");
+	                postMessage("Use: ^help [Command Name]\nDescription: Help command, by default returns general information about JSBot and a list of available commands. Adding the name of another command as an argument will return a more detailed description of that command.");
 	                break;
 	            case "hello":
 	            	postMessage("Use: ^hello\nDescription: Extremely simple default command, to prove that JSBot is awake and alert.");
 	            	break;
 	            case "information":
-	            	postMessage("Use: ^information\nDescription: Gives a short blurb about JSBot.");
+	            	postMessage("Use: ^information\nDescription: Returns a short blurb about JSBot.");
 	            	break;
 	            case "kill":
 	                postMessage("Use: ^kill\nDescription: Causes JSBot to immediately leave the chat, and cease running. Admin only.");
 	                break;
 	            case "toggleSleep":
-	                postMessage("Use: ^toggleSleep [time]\nDescription: Turns user commands and related features off or on. An admin only command, to prevent abuse.");
+	                postMessage("Use: ^toggleSleep [time]\nDescription: Turns user commands and related features off or on. Admin only.");
 	                break;
 	            case "uptime":
-	            	postMessage("Use: ^uptime\nDescription: Gives how long, down to the second, that JSBot has been running.");
+	            	postMessage("Use: ^uptime\nDescription: Returns how long, down to the second, that JSBot has been running.");
 	            	break;
 	            case "version":
 	            	postMessage("Use: ^version\nDescription: The version that JSBot is currently running.");
